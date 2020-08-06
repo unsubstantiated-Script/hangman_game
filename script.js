@@ -9,14 +9,23 @@ const figureParts = document.querySelectorAll('.figure-part');
 
 //Code in an API here...
 
-const words = ["application", "programming", "interface", "wizard"];
+let words = [];
 
-let selectedWord = words[Math.floor(Math.random() * words.length)];
+let selectedWord;
 
 const correctLetters = [];
 const wrongLetters = [];
 
 
+async function getWords() {
+    const response = await fetch('./txt/words.txt');
+    const resData = await response.text();
+    words = resData.split('\n');
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+    displayWord();
+}
+
+getWords();
 
 //Show Hidden Word 
 function displayWord() {
@@ -114,4 +123,4 @@ playAgainBtn.addEventListener('click', () => {
     popup.style.display = 'none'
 })
 
-displayWord()
+getWords()

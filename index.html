@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Hang-Person</title>
+    <title>Hangin' Around</title>
 </head>
 
 <body>
-    <h1>Hangman</h1>
+    <h1 id="test">Hangin' Around</h1>
     <p>Find the hidden word - Enter a letter</p>
+    <small>--Don't guess wrong too many times!--</small>
     <div class="game-container">
         <svg height="250" width="200" class="figure-container">
             <!-- Gallows -->
@@ -35,23 +36,18 @@
 
         <div class="wrong-letters-container">
             <div id="wrong-letters">
-                <p>Incorrect Guesses</p>
-                <span>e,r,t,y</span>
             </div>
         </div>
         <div class="word" id="word">
-            <div class="letter">h</div>
-            <div class="letter">e</div>
-            <div class="letter">l</div>
-            <div class="letter">l</div>
-            <div class="letter">o</div>
         </div>
     </div>
     <!-- Container for final message -->
     <div class="popup-container" id="popup-container">
         <div class="popup">
-            <h2 id="final-message">You Have Won!</h2>
-            <button id="play-button">Play Again</button>
+            <h2 id="final-message">
+                <!-- Oh! You Actually Survived? <br> <small>Good job I guess?</small> -->
+            </h2>
+            <button id="play-button">Play Again?</button>
         </div>
     </div>
 
